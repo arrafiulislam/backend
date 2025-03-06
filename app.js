@@ -1,15 +1,15 @@
-import dotenv from "dotenv";
+const dotenv = require("dotenv");
 dotenv.config();
-import express from "express";
-import cors from "cors";
-import morgan from "morgan";
-import helmet from "helmet";
-import rateLimit from "express-rate-limit";
-import connectDB from "./config/connectdb.js";
-import userRoutes from "./routes/userRoutes.js";
+const express = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
+const helmet = require("helmet");
+const rateLimit = require("express-rate-limit");
+const connectDB = require("./config/connectdb.js");
+const userRoutes = require("./routes/userRoutes.js");
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 8000;
 const DATABASE_URL = process.env.DATABASE_URL;
 
 // Middleware

@@ -1,9 +1,9 @@
-import express from "express";
+const express = require("express");
 const router = express.Router();
-import UserController from "../controllers/userController.js";
-import DataController from "../controllers/dataEntryController.js";
-import checkUserAuth from "../middlewares/auth-middleware.js";
-import GraphController from "../controllers/graph.js";
+const UserController = require("../controllers/userController.js");
+const DataController = require("../controllers/dataEntryController.js");
+const checkUserAuth = require("../middlewares/auth-middleware.js");
+const GraphController = require("../controllers/graph.js");
 
 //Poute Level Middleware
 router.use("/changepassword", checkUserAuth);
@@ -139,4 +139,4 @@ router.get(
   GraphController.gettherapyAtSchoolCountCard
 );
 
-export default router;
+module.exports = router;
